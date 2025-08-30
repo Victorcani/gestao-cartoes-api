@@ -1,0 +1,12 @@
+package com.gestaocartoes.repository;
+
+import com.gestaocartoes.model.Contratacao;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface ContratacaoRepository extends JpaRepository<Contratacao, Long> {
+    List<Contratacao> findByClienteId(Long clienteId); // retorna todas as contratações de um cliente
+}
